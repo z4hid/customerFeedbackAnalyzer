@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Feedback Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Poppins', sans-serif; background-color: #f4f4f4; color: #333; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0;">
+    <div class="container" style="background-color: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); width: 90%; max-width: 500px;">
+        <h1 class="title" style="color: #4caff1; text-align: center; margin-bottom: 25px;">Customer Feedback Prediction</h1>
+
+        <form action="/predict" method="post" class="form" style="display: flex; flex-direction: column;">
+            <label for="review" class="form-label" style="font-weight: 500; margin-bottom: 8px;">Enter Review:</label>
+            <textarea id="review" name="review" required class="form-textarea" style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 20px; resize: vertical;"></textarea>
+            <button type="submit" class="form-button" style="background-color: #2980b9; color: #fff; padding: 12px 25px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">Predict</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result" style="margin-top: 30px; text-align: center;">
+            <h2 class="result-title" style="color: #2980b9; margin-bottom: 10px;">Customer Feedback</h2>
+            <p class="result-text" style="color: #6c74c8; font-size: 20px; font-weight: 600;">{{ prediction }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

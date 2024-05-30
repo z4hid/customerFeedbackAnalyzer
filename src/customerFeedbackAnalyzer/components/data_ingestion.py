@@ -22,8 +22,13 @@ class DataIngestion:
         try:
             df = pd.read_csv(r'artifacts/data.tsv', delimiter = '\t', quoting = 3)
             logging.info('Read dataset as pandas DataFrame')
+            
+            df[df['verified_reviews'].isna() == True]
+            df.dropna(inplace=True)
         
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)
+            
+            
             
             df.to_csv(self.ingestion_config.raw_data_path, index=False, header=True)
             logging.info('Initiating Train Test Split')
