@@ -14,10 +14,30 @@ class DataIngestionConfig:
     
 class DataIngestion:
     def __init__(self):
+        """
+        Initializes a new instance of the DataIngestion class.
+
+        This constructor initializes the `ingestion_config` attribute with a new instance of the `DataIngestionConfig` class.
+
+        Parameters:
+            None
+
+        Returns:
+            None
+        """
         self.ingestion_config = DataIngestionConfig()
         
         
     def initiate_data_ingestion(self):
+        """
+        Initiates the data ingestion process by reading a CSV file, dropping rows with missing values, and splitting the data into training and testing sets.
+
+        Returns:
+            tuple: A tuple containing the paths to the training and testing data files.
+
+        Raises:
+            CustomException: If an error occurs during the data ingestion process.
+        """
         logging.info('Data ingestion method started')
         try:
             df = pd.read_csv(r'artifacts/data.tsv', delimiter = '\t', quoting = 3)
