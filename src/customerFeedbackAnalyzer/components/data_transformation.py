@@ -32,6 +32,15 @@ class DataTransformationConfig:
 # Define data transformation class
 class DataTransformation:
     def __init__(self):
+        """
+        Initializes the DataTransformation class by setting up the data transformation configuration and stopwords set.
+
+        Parameters:
+            None
+
+        Returns:
+            None
+        """
         self.data_transformation_config = DataTransformationConfig()  # Initialize data transformation configuration
         self.stopwords_set = set(stopwords.words('english'))  # Initialize stopwords set
 
