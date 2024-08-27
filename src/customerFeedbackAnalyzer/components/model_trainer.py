@@ -23,6 +23,18 @@ class ModelTrainer:
         self.model_trainer_config = ModelTrainerConfig()
         
     def initiate_model_trainer(self, X_train, y_train, X_test, y_test):
+        """
+        This function trains a model and evaluates it on the test data
+        
+        Parameters:
+        X_train (np.ndarray): The training features.
+        y_train (np.ndarray): The training labels.
+        X_test (np.ndarray): The testing features.
+        y_test (np.ndarray): The testing labels.
+        
+        Returns:
+        float: The accuracy score of the best model on the test data.
+        """
         try:
             logging.info("Entered initiate_model_trainer method of ModelTrainer class")
             # x_train, y_train, x_test, y_test = (
