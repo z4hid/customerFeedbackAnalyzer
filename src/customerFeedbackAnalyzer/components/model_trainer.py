@@ -20,6 +20,17 @@ class ModelTrainerConfig:
     
 class ModelTrainer:
     def __init__(self):
+        """
+        Initializes a new instance of the ModelTrainer class.
+
+        This constructor initializes the `model_trainer_config` attribute with a new instance of the `ModelTrainerConfig` class.
+
+        Parameters:
+            None
+
+        Returns:
+            None
+        """
         self.model_trainer_config = ModelTrainerConfig()
         
     def initiate_model_trainer(self, X_train, y_train, X_test, y_test):
